@@ -1,0 +1,132 @@
+/*************************** Home.html****************************/
+.logo1{
+     
+   float:left;
+    font-family: monospace;
+    font-size: 40px;
+    background: black;
+    color:aliceblue;
+    display: inline-block;
+    width: 350px;
+    height:220px;
+    animation:anim1 1s alternate infinite ;
+    text-align: center;
+}
+.logo{
+    background:aqua;
+    width: 1810px;
+    height: 230px;
+}
+.logo ul{
+     float:left;
+     margin: 170px 0px 0px 400px;
+}
+.logo ul li{
+    float:left;
+    list-style: none;
+    margin-left: 80px;
+    padding: 15px 15px 15px 15px;
+    background:silver;
+    color:brown;
+    border-radius: 15px;
+}
+.logo ul li:hover{
+    background:gold;
+    margin-top: 5px;
+}
+.main{
+    width:auto;
+    height:auto;
+}
+ 
+.logoimg{
+    float: left;
+    width: 1460px;
+    height: 230px;
+}
+@keyframes anim1{
+    0%{
+        background: red;
+        
+    }
+    50%{
+        background: black;
+        border-radius: 100px;
+        transform: rotate(10deg);
+    }
+    100%{
+        background: black;
+        border-radius: 100px;
+        transform: rotate(-10deg);
+    }
+}
+@keyframes amin2{
+        0%{
+            background-image: url(images.jpeg);
+        }
+         50%{
+            background-image: url(images.jpeg);
+        }
+         100%{
+            background-image: url(images.jpeg);
+        }
+    }
+.slide{
+    background-color:beige;
+    width: 1810px;
+    height: 350px;
+}
+.slide:hover{
+    animation: anim2 1s;
+     color: aqua;   
+}
+/*************************** Home.html****************************/
+
+/*************************** Login.html****************************/
+
+.login{
+    background-color:silver;
+    width:700px;
+    height: 350px;
+    border-radius: 10px;
+    margin-top: 300px;
+    padding-top: 30px;
+    padding-left: 30px;
+    box-shadow: 30%;
+    
+}
+.login input{
+    font-size: 20px;
+    width: 60%;
+    height: 15%;
+    border: 3px solid  #555;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.search input{
+    font-size: 25px;
+    border-radius: 20px;
+    width:300px;
+    height: 40px;
+    color: crimson;
+}
+.login ul{
+    margin-left: 170px;
+}
+.login ul li{
+    float: left;
+    list-style: none;
+    margin: 0px 0px 10px 30px;
+    padding: 20px 25px 20px 25px;
+    background:gold;
+    border-radius: 20px;
+}
+.login ul li:hover{
+    margin-top: 2px;
+    background:aqua;
+}
+/*************************** Login.html****************************/
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>login</title>
+        <link href="{% static 'style1.css' %}" rel="stylesheet" media="all">
+        <link href="{% static 'fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.min.css' %}" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <center><div class="login">
+            <h1><span class="fa fa-address-book"></span>Login Your Account</h1><br>
+            
+            Username:
+            <input type="text" name="username" >
+            <br><br>
+            password:
+            <input type="password" name="password" >
+            <br>
+
+            <ul><input type="submit" name="log" >
+            </ul>
+            
+        </div></center>
+            </form>
+     <div>
+           {% for message in messages %}
+                <h3> {{message}} </h3>
+           {% endfor %}
+       </div>
+        
+    </body>
+</html>

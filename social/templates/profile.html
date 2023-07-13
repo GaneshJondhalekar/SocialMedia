@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Simple User Profile Widget</title>
+
+<link rel="stylesheet" href="{% static 'profile.css' %}">
+
+</head>
+
+<!-- partial:index.partial.html -->
+<body>
+    <div class="profile-card">
+
+        <div class="profile-cover">
+
+            <div class="menu-container">
+                <a class="list-icon" title="Expand" href="javascript:void(0);"></a>
+                <ul class="profile-actions" style="display: none;">
+                    <li><a href="#">Follow</a></li>
+                    <li><a href="#">Add as Friend</a></li>
+                    <li><a href="#">Like</a></li>
+                </ul>
+            </div>
+             {% for profile in profile %}
+            <div class="profile-avatar">
+                <div class="btns-container">
+
+                </div>
+                <a href="#"><img src="{{profile.profile_photo.url}}" alt="Anis M" /></a>
+            </div>
+
+            <div class="profile-details">
+                <h1>{{profile.name}}</h1>
+                <h6>{{profile.profession}}</h6>
+            </div>
+
+        </div>
+         {% endfor %}
+
+
+        <div class="profile-content">
+            <ul>
+                <li>
+                    <div class="digits">83</div>
+                    Followers
+                </li>
+                <li>
+                    <div class="digits">1507</div>
+                    Tweets
+                </li>
+                <li>
+                    <div class="digits">234</div>
+                    Friends
+                </li>
+                <li>
+                    <div class="digits">51</div>
+                    Likes
+                </li>
+
+            </ul>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+   {% if button_status == 'not_friend' %}
+			<small><a class='btn btn-primary' href="{% url 'add_request' id=pk %}">Add Friend</a></small>
+		{% elif button_status == 'friend_request_sent' %}
+			<small><a class="btn btn-warning" href="{% url 'cancel_request' id=pk %}">Cancel Request</a></small>
+        {% else %}
+        <h1>Friends</h1>
+		{% endif %}
+    {% if pk is None %}
+     <li><a href="editprofile">EditProfile</a></li>
+    {% endif %}
+ <script  src="{% static 'js/profile.js' %}"></script>
+
+</body>
+</html>
+<!-- partial -->
+

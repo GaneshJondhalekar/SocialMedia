@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post</title>
+</head>
+<body>
+      <div>
+    <form method="post" enctype="multipart/form-data" action="">
+    {% csrf_token %}
+    {{form}}
+        <button type="submit" name=upload"">Upload files</button>
+</div>
+
+
+
+       <div>
+           {% for message in messages %}
+                <h3> {{message}} </h3>
+           {% endfor %}
+       </div>
+
+</body>
+</html>

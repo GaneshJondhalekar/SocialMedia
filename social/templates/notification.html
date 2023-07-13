@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifcations</title>
+</head>
+<body>
+<h3>All Notifications</h3>
+<div>
+    {% for notification in notifications %}
+    <ul>You have friend request from {{notification.from_user}}</ul><a href="{% url 'accept_request' id=notification.from_user.id %}"><button>Accept Request</button></a><a href="{% url 'delete_request' id=notification.from_user.id %}"><button>Delete Request</button></a>
+    {% endfor %}
+
+    {% for comment in comments %}
+    {% for c in comment %}
+    <ul>You have comment from {{c.user}}  {{c.comment}}</ul>
+    {% endfor %}
+    {% endfor %}
+</div>
+</body>
+</html>

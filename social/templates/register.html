@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>register</title>
+    </head>
+
+    <body>
+       <div>
+          <form action="" method="POST" id="sendemail">
+              {% csrf_token %}
+              <ol>
+                <li>
+                  <label for="fname">First Name (required)</label>
+                  <input id="fname" name="first_name" class="text" />
+                </li>
+                  <li>
+                  <label for="lname">Last Name (required)</label>
+                  <input id="lname" name="last_name" class="text" />
+                </li>
+                  <li>
+                  <label for="username">User Name (required)</label>
+                  <input id="username" name="username" class="text" />
+                </li>
+                <li>
+                  <label for="email">Email Address (required)</label>
+                  <input id="email" name="email" class="email" />
+                </li>
+                <li>
+                  <label for="password">Password</label>
+                  <input id="password" name="password" class="password" />
+                </li>
+                   <li>
+                  <label for="rpassword">Retype Password</label>
+                  <input id="rpassword" name="rpassword" class="password" />
+
+                  <input type="image" name="imageField" id="imageField" src="{% static 'images/submit.gif' %}" class="send" />
+                  <div class="clr"></div>
+                </li>
+              </ol>
+            </form>
+
+        </div>
+       <div>
+           {% for message in messages %}
+                <h3> {{message}} </h3>
+           {% endfor %}
+       </div>
+
+    </body>
+</html>
